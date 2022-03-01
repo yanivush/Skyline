@@ -5,7 +5,7 @@ Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOi
 
 //creation divs to aplly  dom first
 
-var cesiumContainer = document.createElement("div");
+/*var cesiumContainer = document.createElement("div");
 cesiumContainer.id = "cesiumContainer";
 cesiumContainer.className ="fullSize";
 document.body.appendChild(cesiumContainer);
@@ -16,7 +16,7 @@ cesiumContainer.appendChild(view3DDoc);
 
 var view2DDoc = document.createElement("div");
 view2DDoc.id ="view2D";
-cesiumContainer.appendChild(view2DDoc);
+cesiumContainer.appendChild(view2DDoc);*/
 
 
 // We want our two views to be synced across time, so we create
