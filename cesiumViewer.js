@@ -77,26 +77,25 @@ function sync2DView() {
   
   //get view position every worl position point viewchange
    ellipsoid = view3D.scene.globe.ellipsoid;
-   cartographic = ellipsoid.cartesianToCartographic(newWorldPosition);
+   cartographic = ellipsoid.cartesianToCartographic(worldPosition);
    longitude =  Number(Cesium.Math.toDegrees(cartographic.longitude));
    latitude = Number(Cesium.Math.toDegrees(cartographic.latitude));
 
-   view2D.entities.add({
-    position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-    billboard: {
-      image: "images/arrow.png",
-      scale : 0.5,
-    },
-  })
-
-
+ 
    view2D.entities.removeAll();
   // Tell the 2D camera to look at the point of focus. The distance controls how zoomed in the 2D view is
   // (try replacing `distance` in the line below with `1e7`. The view will still sync, but will have a constant zoom)
   view2D.scene.camera.lookAt(
     worldPosition,
     new Cesium.Cartesian3(0.0, 0.0, distance),
-    
+    view2D.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
+      billboard: {
+        image: "images/arrow.png",
+        scale : 0.5,
+      },
+    })
+  
   );
 }
 
