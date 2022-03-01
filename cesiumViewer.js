@@ -81,6 +81,14 @@ function sync2DView() {
    longitude =  Number(Cesium.Math.toDegrees(cartographic.longitude));
    latitude = Number(Cesium.Math.toDegrees(cartographic.latitude));
 
+   view2D.entities.add({
+    position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
+    billboard: {
+      image: "images/arrow.png",
+      scale : 0.5,
+    },
+  })
+
 
    view2D.entities.removeAll();
   // Tell the 2D camera to look at the point of focus. The distance controls how zoomed in the 2D view is
@@ -88,13 +96,7 @@ function sync2DView() {
   view2D.scene.camera.lookAt(
     worldPosition,
     new Cesium.Cartesian3(0.0, 0.0, distance),
-    view2D.entities.add({
-    position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-    billboard: {
-      image: "images/arrow.png",
-      scale : 0.5,
-    },
-  })
+    
   );
 }
 
