@@ -99,14 +99,6 @@ function sync2DView() {
   );
 }
 
-function disable2DmapMovements(mapDef){
-  mapDef.scene.screenSpaceCameraController.enableRotate = false;
-  mapDef.scene.screenSpaceCameraController.enableTranslate = false;
-  mapDef.scene.screenSpaceCameraController.enableZoom = false;
-  mapDef.scene.screenSpaceCameraController.enableTilt = false;
-  mapDef.scene.screenSpaceCameraController.enableLook = false;
-}
-
 // Apply our sync function every time the 3D camera view changes
 view3D.camera.changed.addEventListener(sync2DView);
 // By default, the `camera.changed` event will trigger when the camera has changed by 50%
@@ -115,6 +107,10 @@ view3D.camera.percentageChanged = 0.01;
 
 // Since the 2D view follows the 3D view, we disable any
 // camera movement on the 2D view
-disable2DmapMovements(view2D);
+mapDef.scene.screenSpaceCameraController.enableRotate = false;
+mapDef.scene.screenSpaceCameraController.enableTranslate = false;
+mapDef.scene.screenSpaceCameraController.enableZoom = false;
+mapDef.scene.screenSpaceCameraController.enableTilt = false;
+mapDef.scene.screenSpaceCameraController.enableLook = false;
 
 });
