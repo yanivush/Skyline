@@ -1,0 +1,14 @@
+@import url("./bucket.css");
+#cesiumContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#view3D {
+  display: inline-block;
+  width: 100%;
+}
+#view2D {
+  display: inline-block;
+  width: 100%;
+}
