@@ -53,6 +53,14 @@ let distance;
 let longitude = 0;
 let latitude = 0;
 
+view2D.entities.add({
+  position: Cesium.Cartesian3.fromDegrees(0, 0),
+  billboard: {
+    image: "images/arrow.png",
+    scale : 0.07,
+  },
+})
+
 //function to calculate positions for globe and 2d scene
 function sync2DView() {
   // The center of the view is the point that the 3D camera is focusing on
@@ -60,15 +68,6 @@ function sync2DView() {
     Math.floor(view3D.canvas.clientWidth / 2),
     Math.floor(view3D.canvas.clientHeight / 2)
   );
-
-   //initalize pointer for first time
-  view2D.entities.add({
-    position: Cesium.Cartesian3.fromDegrees(0, 0),
-    billboard: {
-      image: "images/arrow.png",
-      scale : 0.07,
-    },
-  })
 
 
   // Given the pixel in the center, get the world position
