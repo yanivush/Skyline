@@ -92,7 +92,7 @@ function sync2DView() {
     position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
     billboard: {
       image: "images/arrow.png",
-      scale : 3.0
+      scale : 0.3
     },
   })
   );
